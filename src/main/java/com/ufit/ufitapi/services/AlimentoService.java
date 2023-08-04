@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.ufit.ufitapi.entities.Alimento;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -15,8 +14,7 @@ public class AlimentoService {
     private AlimentoRepository repository;
 
     public Alimento findByName(String name){
-        Alimento ali = new Alimento();
-        return ali;
+        return new Alimento();
     }
 
     public List<Alimento> findAll(){
