@@ -1,11 +1,17 @@
 package com.ufit.ufitapi.entities;
 
+import jakarta.persistence.*;
+
 import java.io.Serializable;
 import java.util.Objects;
 
+@Entity
+@Table(name = "Alimento")
 public class Alimento implements Serializable {
     private static final long serialVersionUID = 1L;
-    public String id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    public Long id;
     public String name;
     public int calorias;
     public float proteinas;
@@ -14,11 +20,11 @@ public class Alimento implements Serializable {
     public float fibras;
 
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -85,7 +91,7 @@ public class Alimento implements Serializable {
 
     public Alimento(){}
 
-    public Alimento(String id, String name, int calorias, float proteinas, float lipideos, float carboidratos, float fibras) {
+    public Alimento(Long id, String name, int calorias, float proteinas, float lipideos, float carboidratos, float fibras) {
         this.id = id;
         this.name = name;
         this.calorias = calorias;
